@@ -25,7 +25,7 @@ public class DAOFileImpl implements DAO{
             pw.print(object);
             pw.close();
         } else {
-            throw new IllegalArgumentException("Object string is empty! Notification file will be empty.");
+            throw new IllegalArgumentException("Object string is empty! Output file will be empty.");
         }
 
     }

@@ -60,7 +60,7 @@ public class Common {
             throw new Exception(String.format("No Currency with ID %d exist.", id));
         }
 
-        public String getTransactionTypeValue(){
+        public String getCurrencyValue(){
             return value;
         }
     }

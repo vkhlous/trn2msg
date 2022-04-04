@@ -26,6 +26,10 @@ public class Totals {
         this.count++;
     }
 
+    protected int getCount( ) {
+        return count;
+    }
+
     protected void addSum(double sum) {
         this.sum += sum;
     }

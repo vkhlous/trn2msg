@@ -43,9 +43,13 @@ public class Notification {
     @Override
     public String toString() {
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.findAndRegisterModules();
-            return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
+            if (this.totals.getCount() > 0) {
+                ObjectMapper objectMapper = new ObjectMapper();
+                objectMapper.findAndRegisterModules();
+                return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(this);
+            } else {
+                log.error("ERROR: No messages were processed correctly to notification.");
+            }
         } catch (JsonProcessingException e) {
             log.error(String.format("ERROR: Notification object can not be serialized. Exception desc: %s", e.getMessage()));
         }

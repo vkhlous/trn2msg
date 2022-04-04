@@ -22,6 +22,7 @@ public class TransactionFileReader {
         this.applicationArguments = applicationArguments;
     }
 
+    // Starts after application is initialized
     @PostConstruct
     public void run(){
         log.info("START.");

@@ -61,7 +61,7 @@ public class Message {
     private void setTransactionType(Map<Common.Field, char[]> transactionByFields) throws Exception {
         char[] transactionType = transactionByFields.get(Common.Field.TRANSACTION_TYPE);
         int temp = Integer.parseInt(String.valueOf(transactionType));
-        this.transactionTypeStr = Common.TransactionType.getTransactionTypeById(temp).name();
+        this.transactionTypeStr = Common.TransactionType.getTransactionTypeById(temp).getTransactionTypeValue();
     }
 
     private void setPan(Map<Common.Field, char[]> transactionByFields) {
@@ -79,7 +79,7 @@ public class Message {
     private void setCurrency(Map<Common.Field, char[]> transactionByFields) throws Exception {
         char[] currency = transactionByFields.get(Common.Field.CCY);
         int temp = Integer.parseInt(String.valueOf(currency));
-        this.currencyStr = Common.Currency.getCurrencyById(temp).name();
+        this.currencyStr = Common.Currency.getCurrencyById(temp).getCurrencyValue();
     }
 
     private void setDate(Map<Common.Field, char[]> transactionByFields) {
